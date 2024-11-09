@@ -1,0 +1,143 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full Page Background */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('mainpage.jpg'); /* Replace with your background image URL */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top, so we can move it down */
+}
+
+/* About Us Icon Styling */
+.about-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0); /* Semi-transparent background */
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.about-icon:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+}
+
+
+/* Center the content */
+.container {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0); /* Semi-transparent background for readability */
+    border-radius: 10px;
+    margin-top: 30%; /* Move the content down */
+}
+
+/* Title Style */
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Paragraph Style */
+p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 10px;
+    margin-bottom: 20px;
+}
+
+/* Button Style */
+.tap-btn {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 10px;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0); /* Dark button with a slight transparency */
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.tap-btn i {
+    font-style: italic;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif; /* Apply font to <i> element */
+}
+
+
+
+
+/* Mobile-First Styling */
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure the content is not too wide and takes up only the needed space */
+.container {
+    width: 100%; /* Adjust width for mobile devices */
+    max-width: 350px; /* Ensure the container doesn't get too wide on large screens */
+    margin-top: 120%; /* Adjust this value to move the content further down */
+}
+
+/* Make the button touch-friendly (larger size for small devices) */
+.tap-btn {
+    min-width: 200px;
+    min-height: 50px;
+    font-size: 1.5rem;
+}
+
+
+
+/* Footer Style */
+.footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 5px;
+    padding: 10px 0;
+    background: rgba(0, 0, 0, 0); /* Semi-transparent black background */
+}
+
+
+
+
+
+/* Media Query for larger screens (tablet/desktop) */
+@media (min-width: 640px) {
+    /*360x640
+    /* Adjust the title and button size */
+    h1 {
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    .tap-btn {
+        font-size: 1.5rem;
+        padding: 15px 30px;
+    }
+}

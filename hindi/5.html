@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-image: url('image.jpg'); /* Replace with your background image URL */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .content {
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        /* Counter Styling */
+        .counter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .counter button {
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 50%;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .counter input {
+            font-size: 1.5rem;
+            width: 60px;
+            text-align: center;
+            border: none;
+            background-color: transparent;
+            color: white;
+        }
+
+        /* Circle Buttons Styling */
+        .circle-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .circle {
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: black;
+            cursor: pointer;
+        }
+
+        /* Start Button Styling */
+        .start-button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .back-icon {
+    font-size: 20px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+        /* Media Query for Mobile Devices */
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            .counter button,
+            .circle {
+                width: 35px;
+                height: 35px;
+            }
+
+            .start-button {
+                font-size: 0.9rem;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="back-icon" onclick="window.location.href='1.html'">&#8592</div>
+    <div class="overlay">
+        <div class="content">
+            <h1>आप जो मंत्रों की संख्या जपना चाहते हैं, उसे दर्ज करें
+            </h1>
+            <div class="counter">
+                <button onclick="decrement()">-</button>
+                <input type="text" id="counterValue" value="0" readonly>
+                <button onclick="increment()">+</button>
+            </div>
+            <div class="circle-buttons">
+                <div class="circle" onclick="setCounterValue(3)">3</div>
+                <div class="circle" onclick="setCounterValue(5)">5</div>
+                <div class="circle" onclick="setCounterValue(11)">11</div>
+                <div class="circle" onclick="setCounterValue(51)">51</div>
+                <div class="circle" onclick="setCounterValue(108)">108</div>
+            </div>
+            <button class="start-button" onclick="startPradakshana()">शुरू करें
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let count = 0;
+    
+        function increment() {
+            count++;
+            document.getElementById('counterValue').value = count;
+        }
+    
+        function decrement() {
+            if (count > 0) {
+                count--;
+                document.getElementById('counterValue').value = count;
+            }
+        }
+    
+        function setCounterValue(value) {
+            count = value; // Set the counter to the value of the clicked circle button
+            document.getElementById('counterValue').value = value;
+        }
+    
+        function startPradakshana() {
+            // Store the counter value in localStorage
+            localStorage.setItem('pradakshanaCount', count);
+            // Redirect to the next page
+            window.location.href = "6.html";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Full Page Background */
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-image: url('mainpage.jpg'); /* Replace with your background image URL */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align to top, so we can move it down */
+            position: relative;
+        }
+
+        /* Overlay Styling */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Black with opacity */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 0; /* Lower z-index to ensure it is below the Back Icon */
+        }
+
+        /* Back Icon Styling */
+        .back-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            z-index: 2; /* Make sure the back icon is above the overlay */
+        }
+
+        /* About Us Content Container */
+        .about-container {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0); /* Semi-transparent background for readability */
+            border-radius: 10px;
+            margin-top: 30%; /* Move the content down */
+            width: 80%;
+            max-width: 600px;
+            z-index: 1; /* Ensure it is above the overlay but below the back icon */
+        }
+
+        /* Title Styling */
+        .about-container h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px; /* Font size for h1 */
+            margin-bottom: 20px;
+        }
+
+        /* Paragraph Styling */
+        .about-container p {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 13px; /* Font size for p */
+            margin-bottom: 20px;
+        }
+
+        /* Media Query for Larger Screens */
+        @media (min-width: 640px) {
+            .about-container {
+                width: 60%;
+            }
+
+            .about-container h1 {
+                font-size: 4rem; /* Slightly larger h1 on larger screens */
+            }
+
+            .about-container p {
+                font-size: 1.8rem; /* Slightly larger p on larger screens */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Overlay Background -->
+    <div class="overlay"></div>
+
+    <!-- Back Icon -->
+    <div class="back-icon" onclick="window.location.href='1.html'">&#8592;</div>
+    
+    <!-- About Us Content -->
+    <div class="about-container">
+        <h1>About Us</h1>
+        <p>Welcome to PujaPath, your spiritual companion for tracking temple rounds and mantras with ease. Our user-friendly app simplifies your spiritual practices, offering visual progress tracking and milti-language support. Stay focused on yout journey toward inner peace and devotion as you cultivate your spiritual growth.</p>
+    </div>
+
+</body>
+</html>

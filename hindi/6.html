@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pradakshana</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-image: url('image.jpg'); /* Replace with your background image URL */
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .heading {
+            font-size: 24px;
+            margin-right: 10px; /* Space between heading and counter box */
+        }
+
+        .counter-box {
+            font-size: 1.2rem; /* Smaller font size */
+            padding: 5px 10px;
+            border-radius: 10px;
+            border: 2px solid black;
+            background-color: white;
+            width: 50px; /* Smaller width */
+            text-align: center;
+        }
+
+        .circle-buttons {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* 5 buttons per row */
+            gap: 10px;
+            justify-items: center;
+            margin-bottom: 20px;
+            width: 100%;
+            max-height: 400px; /* Set a max height for the container */
+            overflow-y: scroll; /* Enable vertical scrolling */
+        }
+
+        .circle {
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: black;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .circle.clicked {
+            background-color: rgb(30, 69, 94);
+            color: white;
+        }
+
+        .back-icon {
+            font-size: 20px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            color: white;
+        }
+
+        /* New 'Done' Button Styling */
+        .done-button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="back-icon" onclick="window.location.href='2.html'">&#8592;</div>
+    <div class="header-container">
+        <div class="heading">
+            दर्ज की गई मंत्रों की संख्या
+        </div>
+        <div class="counter-box" id="pradakshanaCount"></div>
+    </div>
+    <div class="circle-buttons" id="circleButtonsContainer">
+        <!-- Dynamic buttons will be inserted here -->
+    </div>
+
+    <!-- Done Button -->
+    <button class="done-button" id="doneButton">समाप्त
+    </button>
+
+    <script>
+        // Retrieve the stored count from localStorage
+        let pradakshanaCount = localStorage.getItem('pradakshanaCount') || 0;
+
+        // Display the count in the box
+        document.getElementById('pradakshanaCount').innerText = `${pradakshanaCount}`;
+
+        // Create the circle buttons dynamically
+        let circleButtonsContainer = document.getElementById('circleButtonsContainer');
+        for (let i = 0; i < pradakshanaCount; i++) {
+            let circle = document.createElement('div');
+            circle.classList.add('circle');
+            circle.innerText = i + 1;
+
+            // Add click event listener to each circle
+            circle.addEventListener('click', function() {
+                // Change color to blue without displaying any message
+                circle.classList.add('clicked');
+            });
+
+            circleButtonsContainer.appendChild(circle);
+        }
+
+        // Redirect to '7.html' when 'Done' button is clicked
+        document.getElementById('doneButton').addEventListener('click', function() {
+            console.log("Done Button Clicked"); // This confirms if the event is triggered
+            window.location.href = '7.html';
+        });
+    </script>
+</body>
+</html>

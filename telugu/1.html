@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Buttons with Edge Images</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Full Page Background */
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-image: url('mainpage.jpg'); /* Replace with your background image URL */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Overlay Styling */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Black overlay with opacity */
+            z-index: 0; /* Ensure the overlay is below buttons */
+        }
+
+        /* Container for Buttons */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            z-index: 1; /* Ensure the buttons are above the overlay */
+        }
+
+        /* Button Styling */
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 25px; /* Rounded corners */
+            width: 350px; /* Set width for buttons */
+            height: 100px; /* Set height for buttons */
+            padding: 10px 20px;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for button depth */
+        }
+
+        /* Edge Image Styling */
+        .button img {
+            width: 80px; /* Set fixed image width */
+            height: auto; /* Maintain aspect ratio */
+            position: absolute;
+            top: 18%;
+            transform: translateY(-50%);
+        }
+
+        /* Image on Left Edge */
+        .button .left-image {
+            left: -40px; /* Position to the left */
+        }
+
+        /* Image on Right Edge */
+        .button .right-image {
+            right: -40px; /* Position to the right */
+        }
+
+        /* Text Centering */
+        .button span {
+            z-index: 1;
+        }
+
+        /* Hover Effect on Button */
+        .button:hover {
+            background-color: rgba(206, 160, 114, 0.8);
+        }
+
+               /* Back Icon styling */
+.back-icon {
+    font-size: 20px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+        /* Responsive Design for Smaller Devices (Modified existing query) */
+        @media (max-width: 640px) {
+            .button-container {
+                flex-direction: column; /* Stack buttons vertically on smaller screens */
+            }
+
+            .button {
+                width: 300px; /* Smaller width for buttons on mobile */
+                height: 40px; /* Smaller height for buttons on mobile */
+                font-size: 1rem; /* Adjust font size on mobile */
+            }
+
+            .button .left-image, .button .right-image {
+                width: 30%; /* Slightly smaller images on mobile */
+                height: auto; /* Maintain aspect ratio */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Overlay Background -->
+    <div class="overlay"></div>
+    <div class="back-icon" onclick="window.location.href='../3.html'">&#8592</div>
+    
+    <!-- Buttons with Images on Edges -->
+    <div class="button-container">
+        <!-- Button 1: Temple image on the right side -->
+        <div class="button" onclick="window.location.href='2.html'">
+            <span>ప్రదక్షిణ లెక్క</span>
+            <img class="right-image" src="temple.png" alt="Temple Image"> 
+        </div>
+
+        <!-- Button 2: Meditating child image on the left side -->
+        <div class="button" onclick="window.location.href='5.html'">
+            <img class="left-image" src="mantra.png" alt="Meditating Image">
+            <span>మంత్ర గణన
+            </span>
+        </div>
+    </div>
+</body>
+</html>

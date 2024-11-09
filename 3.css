@@ -1,0 +1,131 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full Page Background with opacity */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('mainpage.jpg'); /* Replace with your background image URL */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* About Us Icon Styling */
+.about-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0); /* Semi-transparent background */
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    z-index:10;
+}
+
+.about-icon:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+}
+
+/* Overlay with black color and opacity */
+/* Overlay Styling */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Black with opacity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Lower z-index to ensure it's below the About Us icon */
+}
+
+/* Container for content */
+.container {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0); /* Semi-transparent background for readability */
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    margin-bottom: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Title Style */
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+form {
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center the options horizontally */
+}
+
+/* Label styling */
+label {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    display: flex; /* Ensure proper alignment of radio button and text */
+    align-items: center;
+    justify-content: flex-start; /* Align text to the left of the radio button */
+    margin: 10px 0;
+    cursor: pointer;
+    width: 100%; /* Ensures the label takes up the full width of its container */
+}
+
+/* Radio Button styling */
+input[type="radio"] {
+    margin-right: 10px;
+    vertical-align: middle; /* Align radio button with the text */
+}
+
+/* Back Icon styling */
+.back-icon {
+    font-size: 20px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+
+/* Mobile and Responsive Design */
+@media (max-width: 640px) {
+    .container {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    label {
+        font-size: 16px;
+    }
+}
